@@ -1,201 +1,56 @@
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-}
+// Loader
 
-body{
-    font-family:'Poppins',sans-serif;
-    background:#f5fff5;
-    color:#222;
-    transition:0.4s;
-}
+window.addEventListener("load", ()=>{
 
-.dark{
-    background:#111;
-    color:white;
-}
+    setTimeout(()=>{
 
-header{
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:20px 10%;
-    background:#1b5e20;
-    position:sticky;
-    top:0;
-    z-index:1000;
-}
+        document.getElementById("loader").style.display="none";
 
-.logo{
-    color:white;
-    font-size:28px;
-    font-weight:bold;
-}
+    },1500);
 
-nav{
-    display:flex;
-    gap:20px;
-}
+});
 
-nav a{
-    color:white;
-    text-decoration:none;
-}
+// Menu Mobile
 
-.hero{
-    height:90vh;
-    background:url('https://images.unsplash.com/photo-1500382017468-9049fed747ef?q=80&w=1600') center/cover;
-    display:flex;
-    align-items:center;
-    justify-content:center;
-    text-align:center;
-    color:white;
-}
+const hamburguer=document.getElementById("hamburguer");
+const menu=document.getElementById("menu");
 
-.hero-content h1{
-    font-size:60px;
-}
+hamburguer.addEventListener("click", ()=>{
 
-.btn{
-    display:inline-block;
-    margin-top:20px;
-    padding:14px 30px;
-    background:#43a047;
-    color:white;
-    border-radius:10px;
-    text-decoration:none;
-}
+    menu.classList.toggle("active");
 
-.cards{
-    display:flex;
-    flex-wrap:wrap;
-    justify-content:center;
-    gap:30px;
-    padding:80px 20px;
-}
+});
 
-.card{
-    background:white;
-    width:300px;
-    padding:30px;
-    border-radius:20px;
-    text-align:center;
-    box-shadow:0 5px 15px rgba(0,0,0,0.1);
-    transition:0.4s;
-}
+// Counter Animation
 
-.card:hover{
-    transform:translateY(-10px);
-}
+const counters=document.querySelectorAll(".counter");
 
-.card img{
-    width:80px;
-}
+counters.forEach(counter=>{
 
-.counter-section{
-    display:flex;
-    justify-content:center;
-    gap:40px;
-    padding:80px;
-    background:#e8f5e9;
-}
+    counter.innerText='0';
 
-.counter-box{
-    text-align:center;
-}
+    const updateCounter=()=>{
 
-.counter{
-    font-size:60px;
-    color:#1b5e20;
-}
+        const target=+counter.getAttribute('data-target');
 
-.gallery{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-    gap:20px;
-    padding:60px;
-}
+        const c=+counter.innerText;
 
-.gallery img{
-    width:100%;
-    height:300px;
-    object-fit:cover;
-    border-radius:20px;
-}
+        const increment=target/100;
 
-footer{
-    background:#1b5e20;
-    color:white;
-    text-align:center;
-    padding:30px;
-}
+        if(c<target){
 
-#loader{
-    position:fixed;
-    width:100%;
-    height:100%;
-    background:#1b5e20;
-    color:white;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    z-index:9999;
-}
+            counter.innerText=`${Math.ceil(c+increment)}`;
 
-#chatbot{
-    position:fixed;
-    bottom:20px;
-    right:20px;
-    width:300px;
-    background:white;
-    border-radius:15px;
-    overflow:hidden;
-    box-shadow:0 0 20px rgba(0,0,0,0.2);
-}
+            setTimeout(updateCounter,30);
 
-#chat-header{
-    background:#2e7d32;
-    color:white;
-    padding:15px;
-}
+        }else{
 
-#chat-messages{
-    height:200px;
-    padding:10px;
-    overflow-y:auto;
-}
+            counter.innerText=target;
 
-#chat-input{
-    width:100%;
-    padding:15px;
-    border:none;
-    outline:none;
-}
+        }
 
-@media(max-width:768px){
-
-    nav{
-        display:none;
-        flex-direction:column;
-        background:#1b5e20;
-        position:absolute;
-        top:80px;
-        right:0;
-        width:200px;
-        padding:20px;
     }
 
-    nav.active{
-        display:flex;
-    }
+    updateCounter();
 
-    .hero-content h1{
-        font-size:40px;
-    }
-
-    .counter-section{
-        flex-direction:column;
-    }
-}
-⚡ js/script.js
+});
