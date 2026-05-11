@@ -1,21 +1,169 @@
-function checkAnswer(button, isCorrect) {
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    const result = document.getElementById("quiz-result");
+    <title>Agroforte</title>
 
-    if (isCorrect) {
+    <link rel="stylesheet" href="css/style.css">
 
-        result.innerHTML = "✅ Correto! Você entende de sustentabilidade.";
+    <script defer src="js/script.js"></script>
+    <script defer src="js/darkmode.js"></script>
 
-        result.style.color = "green";
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+</head>
 
-        button.style.background = "#2e7d32";
+<body>
 
-    } else {
+    <!-- Loader -->
+    <div id="loader">
+        <h1>🌱 Agroforte</h1>
+    </div>
 
-        result.innerHTML = "❌ Resposta errada. Tente novamente!";
+    <!-- Header -->
+    <header>
 
-        result.style.color = "red";
+        <div class="logo">
+            Agroforte
+        </div>
 
-        button.style.background = "#c62828";
-    }
-}
+        <nav id="menu">
+
+            <a href="index.html">Home</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="tecnologias.html">Tecnologias</a>
+            <a href="quiz.html">Quiz</a>
+            <a href="contato.html">Contato</a>
+
+        </nav>
+
+        <div class="buttons-header">
+
+            <button id="darkBtn">🌙</button>
+
+            <button id="hamburguer">
+                ☰
+            </button>
+
+        </div>
+
+    </header>
+
+    <!-- Hero -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <h1>
+                Agricultura Inteligente
+            </h1>
+
+            <p>
+                Sustentabilidade + Tecnologia + Natureza
+            </p>
+
+            <a href="quiz.html" class="btn">
+                Fazer Quiz
+            </a>
+
+        </div>
+
+    </section>
+
+    <!-- Cards -->
+    <section class="cards">
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/2909/2909763.png">
+
+            <h2>Precisão</h2>
+
+            <p>
+                Monitoramento avançado.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/728/728093.png">
+
+            <h2>Irrigação</h2>
+
+            <p>
+                Economia de água.
+            </p>
+        </div>
+
+        <div class="card">
+            <img src="https://cdn-icons-png.flaticon.com/512/869/869869.png">
+
+            <h2>Energia Verde</h2>
+
+            <p>
+                Energia renovável.
+            </p>
+        </div>
+
+    </section>
+
+    <!-- Contadores -->
+    <section class="counter-section">
+
+        <div class="counter-box">
+            <h2 class="counter" data-target="1500">0</h2>
+            <p>Fazendas Sustentáveis</p>
+        </div>
+
+        <div class="counter-box">
+            <h2 class="counter" data-target="98">0</h2>
+            <p>% Economia de Água</p>
+        </div>
+
+        <div class="counter-box">
+            <h2 class="counter" data-target="300">0</h2>
+            <p>Projetos Verdes</p>
+        </div>
+
+    </section>
+
+    <!-- Galeria -->
+    <section class="gallery">
+
+        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef">
+
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399">
+
+        <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6">
+
+    </section>
+
+    <!-- Chatbot -->
+    <div id="chatbot">
+
+        <div id="chat-header">
+            🤖 AgroBot
+        </div>
+
+        <div id="chat-messages">
+
+            <p>
+                Olá! Pergunte algo sobre agricultura 🌱
+            </p>
+
+        </div>
+
+        <input type="text" id="chat-input" placeholder="Digite aqui...">
+
+    </div>
+
+    <!-- Footer -->
+    <footer>
+
+        <p>
+            © 2026 Agroforte
+        </p>
+
+    </footer>
+
+</body>
+</html>
