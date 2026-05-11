@@ -1,1 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TechVerde | Tecnologia e Sustentabilidade</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header role="banner">
+        <nav aria-label="Menu Principal">
+            <div class="logo">Tech<span>Verde</span></div>
+            <ul class="nav-links">
+                <li><a href="#info">Informações</a></li>
+                <li><a href="#quiz">Desafio Sustentável</a></li>
+            </ul>
+        </nav>
+    </header>
 
+    <main id="main-content">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <h1 id="hero-title">A Tecnologia a Serviço do Planeta</h1>
+                <p>Descubra como a inovação digital está moldando um futuro mais verde e eficiente.</p>
+                <a href="#info" class="btn-primary" role="button">Saber mais</a>
+            </div>
+        </section>
+
+        <section id="info" class="info-section" aria-labelledby="info-title">
+            <h2 id="info-title">Pilares da Tecnologia Verde</h2>
+            <div class="grid">
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1473341304170-971dccb5ac1e?auto=format&fit=crop&w=400" alt="Painéis solares sob o sol" loading="lazy">
+                    <h3>Energia Limpa</h3>
+                    <p>IA e IoT otimizam redes elétricas para integrar fontes renováveis de forma inteligente.</p>
+                </article>
+                <article class="card">
+                    <img src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?auto=format&fit=crop&w=400" alt="Foto de lixo eletrônico reciclado" loading="lazy">
+                    <h3>Economia Circular</h3>
+                    <p>Sistemas de rastreamento ajudam a reduzir o desperdício e melhorar a reciclagem de eletrônicos.</p>
+                </article>
+            </div>
+        </section>
+
+        <section id="quiz" class="quiz-section" aria-labelledby="quiz-title">
+            <div class="container">
+                <h2 id="quiz-title">Teste seus Conhecimentos</h2>
+                <div id="quiz-container" role="region" aria-live="polite">
+                    <p id="question-text">Você sabe quanto de lixo eletrônico é reciclado anualmente no mundo?</p>
+                    <div class="options">
+                        <button class="quiz-option" onclick="checkAnswer(false)">Cerca de 50%</button>
+                        <button class="quiz-option" onclick="checkAnswer(true)">Menos de 20%</button>
+                        <button class="quiz-option" onclick="checkAnswer(false)">Quase 80%</button>
+                    </div>
+                    <p id="quiz-feedback" class="feedback hidden" aria-hidden="true"></p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer role="contentinfo">
+        <p>&copy; 2026 TechVerde - Inovação Consciente</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
